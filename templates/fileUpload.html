@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Upload a File</title>
+        <style>
+          body{
+            background: rgb(85, 2, 145);
+            position: relative;
+          }
+          .theURLsec {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-weight: 500;
+            background-color: white;
+            font-size: 30px;
+            border: 1px solid white;
+            border-radius: 10px;
+            height: 400px;
+            margin: auto;
+            width: 50%;
+            position: absolute;
+            top: 200px;
+            left: 25%;
+          }
+          .submit{
+            border: solid;
+            font-weight: 500;
+            border-radius: 5px;
+            border-color: rgb(85, 2, 145);
+            color: rgb(85, 2, 145);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: pointer;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            height: 70px;
+            width: 220px;
+            font-size: 20px;
+            transition-duration: 0.3s;
+            background-color: white;
+          }
+          .upload{
+            display: block;
+            margin: auto;
+            background-color: aliceblue;
+            border: none;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+          }
+          .submit:hover{
+            background-color: rgb(85, 2, 145);
+            color: white;
+          }
+          .text{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          }
+          
+          li span {
+  position: relative;
+  left: -100px;
+}
+        </style>
+
+    </head>
+    <body>
+        <!-- <h1>Upload new File</h1>
+        <form method=post enctype=multipart/form-data>
+          <input type=file name=file>
+          <input type=submit value=Upload>
+        </form> -->
+        <table>
+          <tr>
+            <td>
+              <div class="theURLsec">
+                  <h3>
+                      Upload a video file
+                  </h3>
+                  <form method=post enctype=multipart/form-data>
+                    <input class="upload" type=file name=file style="height: 50px;">
+                    <input class="submit" type=submit value=Upload style="height: 40px;">
+                    </form>
+                    <p class="text">Did you say: {{ transcription }}</p>
+                  <a href="{{  url_for('download', filename=file) }}" target="_blank"> go to /download?filename= to download the video file </a>
+              </div>
+            </td>
+
+            <td>
+              <!-- <div class="theURLsec" style="top: 450px;">
+                Sri Sairam college of Engineering
+    
+              </div> -->
+            </td>
+          </tr>
+        </table>
+
+
+        <script>
+          function redirectTo(){
+
+            let redirectURL = document.getElementById('url').value;
+            location.replace(redirectURL)            
+          }
+        </script>
+    </body>
+</html>
+
+<!-- <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>-->
